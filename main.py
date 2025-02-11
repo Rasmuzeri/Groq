@@ -37,7 +37,6 @@ def translate_text(request: TranslationRequest):
     
     result = response.json()
     translated_text = result["choices"][0]["message"]["content"]
-    print(f"Translated Text: {translated_text}")
     return {"translated_text": translated_text}
 
 @app.post("/sentiment")
@@ -62,5 +61,4 @@ def analyze_sentiment(request: SentimentRequest):
     
     result = response.json()
     sentiment = result["choices"][0]["message"]["content"]
-    print(f"Sentiment Analysis: {sentiment}")
     return {"sentiment": sentiment}
